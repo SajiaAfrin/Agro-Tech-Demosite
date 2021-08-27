@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>🌱Smart Farmimg🌱</title>
+</head>
+
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="../img/images.jpg" alt="logo"></div>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Crop</a></li>
+            <li><a href="#services">Fertilizer</a></li>
+            <li><a href="#contact">Disease</a></li>
+            <li><a href="#disease">Weather Forcast</a></li>
+        </ul>
+        <div class="rightNav">
+            <input type"text" name="serch" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">🌱Smart Farmimg🌱</p>
+                <p class="text-small">Get Informed Decisions About Your Farming Strategy</p>
+                <div class="buttons">
+                    <button class="btn">Like</button>
+                    <button class="btn">Watch Farming Method</button>
+                </div>
+            </div>
+            <div class="secondHalf">
+                <img src="img/images.jpg" alt="Image">
+
+            </div>
+    </section>
+
+    <section class="section">
+        <div class="paras">
+            <p class="sectionTag text-big">About Smart Farming</p>
+            <p class="sectionSubTag text-small">Improving agriculture, Improving lives, cultivating crops to make farmers imcrease profit.
+                We use state-of-the-art machine learning and deep learning technologies to help you guide through the entire farming process. 
+                Make informed decisions to understand the demographics of your area, understand the factors that affect your crop and keep them 
+                healthy for a super awesome successful yield.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="img/agro tech.jpg" alt="Laptop Image" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section section-left">
+        <div class="paras">
+            <p class="sectionTag text-big">Services</p>
+        </div>
+    </section>
+    <section class="section section-left">
+        <div class="paras">
+            <p class="sectionTag text-big">Crop</p>
+            <p class="sectionSubTag text-small">Recommendation about the type of crops to be cultivated which is best suited for the respective condition.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="img/crop.jpg" alt="Laptop Image" class="imgFluid">
+        </div>
+    </section>
+
+    <style>
+
+        html body {
+          background-color: rgb(206, 206, 228);
+    
+          
+      }
+    
+      
+    </style>
+    <!--Form Section-->
+    <br /><br />
+    <h2 style="text-align: center; margin: 0px; color: black">
+      <b>Find out the most suitable crop to grow in your farm</b>
+    </h2>
+    <br />
+    
+    <div
+      style="
+        width: 350px;
+        height: 50rem;
+        margin: 0px auto;
+        color: black;
+        border-radius: 25px;
+        padding: 10px 10px;
+      "
+    >
+      <form method="POST" action="{{ url_for('crop_prediction') }}">
+        <div class="form-group">
+          <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="Nitrogen"
+            name="nitrogen"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Phosphorous" style="font-size: 17px"
+            ><b>Phosphorous</b></label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="Phosphorous"
+            name="phosphorous"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+    
+        <div class="form-group">
+          <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="Pottasium"
+            name="pottasium"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="ph"
+            name="ph"
+            placeholder="Enter the value"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Rainfall" style="font-size: 17px"><b>Rainfall (in mm)</b></label>
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="Rainfall"
+            name="rainfall"
+            placeholder="Enter the value"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+    
+        <div class="d-flex justify-content-center">
+          <button
+            type="submit"
+            class="btn btn-info"
+            style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
+          >
+            Predict
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    
+    
+    <!-- Form section -->
+    
+    
+
+    <section class="section">
+        <div class="paras">
+            <p class="sectionTag text-big">Fertilizer</p>
+            <p class="sectionSubTag text-small">Recommendation about the type of fertilizer best suited for the particular soil and the recommended crop
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="img/ferti.jpg" alt="Laptop Image" class="imgFluid">
+        </div>
+    </section>
+
+    <style>
+        html body {
+          background-color: rgb(206, 206, 228);
+        }
+      </style>
+      <!--Form Section-->
+      <br /><br />
+      <h2 style="text-align: center; margin: 0px; color: black">
+        <b>Get informed advice on fertilizer based on soil</b>
+      </h2>
+      <br />
+      
+      <div
+        style="
+          width: 350px;
+          height: 40rem;
+          margin: 0px auto;
+          color: black;
+          border-radius: 25px;
+          padding: 10px 10px;
+        "
+      >
+        <form method="POST" action="{{ url_for('fert_recommend') }}">
+          <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+            <input
+              type="number"
+              class="form-control"
+              id="Nitrogen"
+              name="nitrogen"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="Phosphorous" style="font-size: 17px"
+              ><b>Phosphorous</b></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="Phosphorous"
+              name="phosphorous"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+      
+          <div class="form-group">
+            <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+            <input
+              type="number"
+              class="form-control"
+              id="Pottasium"
+              name="pottasium"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+          <!-- <div class="form-group">
+            <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="ph"
+              name="ph"
+              placeholder="Enter the value"
+              style="font-weight: bold"
+              required
+            />
+          </div> -->
+          <div class="form-group">
+            <label for="crop" style="font-size: 17px"
+              ><b>Crop you want to grow</b></label
+            >
+            <select
+              name="cropname"
+              class="form-control"
+              id="crop"
+              placeholder="Select a crop"
+              style="font-weight: bold"
+              required
+            >
+              <option selected>Select crop</option>
+              <option>rice</option>
+              <option>maize</option>
+              <option>chickpea</option>
+              <option>kidneybeans</option>
+              <option>pigeonpeas</option>
+              <option>mothbeans</option>
+              <option>mungbean</option>
+              <option>blackgram</option>
+              <option>lentil</option>
+              <option>pomegranate</option>
+              <option>banana</option>
+              <option>mango</option>
+              <option>grapes</option>
+              <option>watermelon</option>
+              <option>muskmelon</option>
+              <option>apple</option>
+              <option>orange</option>
+              <option>papaya</option>
+              <option>coconut</option>
+              <option>cotton</option>
+              <option>jute</option>
+              <option>coffee</option>
+            </select>
+          </div>
+      
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-info"
+              style="
+                color: black;
+                font-weight: bold;
+                width: 130px;
+                height: 50px;
+                border-radius: 12px;
+                font-size: 21px;
+              "
+            >
+              Predict
+            </button>
+          </div>
+        </form>
+      </div>
+      
+    <section class="section">
+        <div class="paras">
+            <p class="sectionTag text-big">Disease</p>
+            <p class="sectionSubTag text-small">Predicting the name and causes of crop disease and suggestions to cure it.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="img/die.jpg" alt="Laptop Image" class="imgFluid">
+        </div>
+    </section>
+
+    <style>
+        html body {
+          background-color: rgb(206, 206, 228);
+        }
+      </style>
+      <br /><br />
+        <h2 style="text-align: center; margin: 0px; color: black">
+          <b>Find out which disease has been caught by your plant</b>
+        </h2>
+        <br />
+        <br>
+      
+      <div style="
+          width: 350px;
+          height: 50rem;
+          margin: 0px auto;
+          color: black;
+          border-radius: 25px;
+          padding: 10px 10px;
+          font-weight: bold;
+        ">
+      
+        
+      
+      
+        <form class="form-signin" method=post enctype=multipart/form-data>
+      
+          <h2 class="h4 mb-3 font-weight-normal"><b>Please Upload The Image</b></h2>
+          <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)" style="font-weight: bold;">
+          <br>
+          <br>
+          <img id="output-image" class="rounded mx-auto d-block" />
+          <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-weight: bold;">Predict</button>
+      
+      
+        </form>
+      </div>
+      
+      <script type="text/javascript">
+        function preview_image(event) {
+          var reader = new FileReader();
+          reader.onload = function () {
+            var output = document.getElementById('output-image')
+            output.src = reader.result;
+          }
+          reader.readAsDataURL(event.target.files[0]);
+        }
+      </script>
+      
+      </div>
+        <h2 class="text-center">Weather</h2>
+        <div class="form">
+            <input type="text" name="name" id="name" placeholder="Enter your Location">
+            <button class="btn btn-dark">Check</button>
+        </div>
+    <hr>
+    <section class="contact">
+        <h2 class="text-center">Contact</h2>
+        <div class="form">
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+            <input type="text" name="phone" id="phone" placeholder="Enter your Phone Number">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <button class="btn btn-dark">Submit</button>
+        </div>
+    </section>
+    <footer>
+        <p class="text-center">
+        Copyright &copy; 2021 Smart Farming - All rights reserved
+    </p>
+    </footer>
+</body>
+</html>
